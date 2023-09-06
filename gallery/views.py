@@ -3,6 +3,8 @@ from .models import Photo, Category
 
 import random
 
+from .forms import ContactForm
+
 # Create your views here.
 
 
@@ -10,6 +12,22 @@ def Base(request):
     categories = Category.objects.all()
     context = {'categories': categories}
     return render(request, 'base.html', context)
+
+
+
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Handle form submission, e.g., sending an email
+            # You can add your custom logic here
+            pass
+    else:
+        form = ContactForm()
+
+    return render(request, 'contact.html', {'form': form})
 
 
 def Portfolio(request):

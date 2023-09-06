@@ -86,8 +86,8 @@
 
 					<!-- Begin logo -->
 					<div id="logo">
-						<a href="index.html" class="logo-dark"><img src="{% static 'assets/img/R H Photography Logo-03.png' %}" alt="logo"></a>
-						<a href="index.html" class="logo-light"><img src="{% static 'assets/img/R H Photography Logo-03.png' %}" alt="logo"></a>
+						<a href="{% url 'base' %}" class="logo-dark"><img src="{% static 'assets/img/R H Photography Logo-03.png' %}" alt="logo"></a>
+						<a href="{% url 'base' %}" class="logo-light"><img src="{% static 'assets/img/R H Photography Logo-03.png' %}" alt="logo"></a>
 					</div>
 					<!-- End logo -->
 
@@ -366,47 +366,47 @@
 								<div class="row">
 									<div class="col-md-12">
 
-										<!-- Begin contact form 
-										========================= -->
-										<form id="contact-form">
+										    <!-- Begin contact form -->
+    <form id="contact-form" method="post">
+        {% csrf_token %}
+        <!-- Begin hidden required fields -->
+        <input type="hidden" name="project_name" value="yourwebsiteaddress.com">
+        <input type="hidden" name="admin_email" value="your@email.com">
+        <input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com">
+        <!-- End Hidden Required Fields -->
 
-											<!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
-											<input type="hidden" name="project_name" value="yourwebsiteaddress.com"> <!-- Change value to your site name -->
-											<input type="hidden" name="admin_email" value="your@email.com"> <!-- Change value to your email address (where a message will be sent) -->
-											<input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com"> <!-- Change value to your own message subject -->
-											<!-- End Hidden Required Fields -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Name:" placeholder="Your Name" required="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <input type="email" class="form-control" name="Email:" placeholder="Your Email" required="">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Subject:" placeholder="Subject" required="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <textarea class="form-control" name="Message:" rows="8" placeholder="Message" required=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary btn-rounded-5x btn-block">Send Message</button>
+            </div>
+        </div>
+    </form>
+    <!-- End contact form -->
 
-											<div class="row">
-												<div class="col-lg-4">
-													<div class="form-group">
-														<input type="text" class="form-control" name="Name:" placeholder="Your Name" required="">
-													</div>
-												</div>
-												<div class="col-lg-4">
-													<div class="form-group">
-														<input type="email" class="form-control" name="Email:" placeholder="Your Email" required="">
-													</div>
-												</div>
-												<div class="col-lg-4">
-													<div class="form-group">
-														<input type="text" class="form-control" name="Subject:" placeholder="Subject" required="">
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-12">
-													<div class="form-group">
-														<textarea class="form-control" name="Message:" rows="8" placeholder="Message" required=""></textarea>
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-lg-12">
-													<button type="submit" class="btn btn-primary btn-rounded-5x btn-block">Send Message</button>
-												</div>
-											</div>
-										</form>
-										<!-- End contact form -->
 
 									</div> <!-- /.col-->
 								</div> <!-- /.row -->

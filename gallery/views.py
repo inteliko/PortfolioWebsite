@@ -8,6 +8,9 @@ from .forms import ContactForm
 # Create your views here.
 
 
+
+
+
 def Base(request):
     categories = Category.objects.all()
     context = {'categories': categories}
@@ -72,6 +75,12 @@ def Upload(request):
 
 def Contact(request):
     return render(request, 'contact.html')
+
+
+
+
+
+
 
 
 

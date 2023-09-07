@@ -140,6 +140,7 @@
 											{% for category in categories %}
 											<li class="dropdown dropdown-submenu dropdown-hover">
 												<a href="{% url 'category_photo' category.id %}" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ category.name | upper }} <span class="caret-2"><i ></i></span></a>
+
 												
 											</li>
 											{% endfor %}
@@ -177,7 +178,14 @@
 									<a href="{% url 'services' %}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Service<span class="caret-2"><i class=""></i></span></a>
 									
 								</li>
+
+								<li class="dropdown dropdown-hover">
+									<a href="{% url 'post_list' %}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Blog<span class="caret-2"><i class=""></i></span></a>
+									
+								</li>
 								<!-- End dropdown -->
+
+								
 
 								<!-- Begin dropdown
 								====================

@@ -9,6 +9,8 @@ urlpatterns = [
     path('services', views.Service, name='services'),
 
 
+
+
     path('contact/', views.contact_view, name='contact'),
     path('categories/<str:category_name>/', views.Catagories, name='categories'),  # Corrected view name
     path('categories/kids/', views.Kids, name='kids'),
@@ -16,4 +18,6 @@ urlpatterns = [
     path('category/<int:category_id>/', views.CategoryPhotos, name='category_photo'),
     path('upload', views.Upload, name='upload'),
     # Add more URL patterns as needed
+
+    
 ]

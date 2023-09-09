@@ -3,8 +3,7 @@ from django.utils.html import format_html
 from .models import Post, Category, Comment
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('post', 'name', 'email', 'content', 'created_at')
-
+ list_display = ('post', 'name', 'email', 'content', 'created_at', 'ip_address')
 class CommentInline(admin.TabularInline):
     model = Comment
 

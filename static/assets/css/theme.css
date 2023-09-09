@@ -4132,6 +4132,8 @@ body.modal-open {
 }
 
 .blog-list-item .bli-desc {
+    margin: 0;
+    padding: 0;
 }
 
 .blog-list-item .bli-button {

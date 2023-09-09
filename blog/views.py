@@ -7,11 +7,9 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'most_recent_post': most_recent_post, 'posts': posts})
 
 
-
-
-from .models import Post, Comment
+from .models import Comment
 from .forms import CommentForm
-
+from django.shortcuts import render, get_object_or_404, redirect
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
@@ -22,6 +20,7 @@ def post_detail(request, post_id):
         if form.is_valid():
             new_comment = form.save(commit=False)
             new_comment.post = post
+            new_comment.ip_address = get_client_ip(request)  # Add this line
             new_comment.save()
 
             # Redirect to the post detail page
@@ -30,3 +29,11 @@ def post_detail(request, post_id):
         form = CommentForm()
 
     return render(request, 'blog/post_detail.html', {'post': post, 'comments': comments, 'form': form})
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip

@@ -140,7 +140,6 @@
 											{% for category in categories %}
 											<li class="dropdown dropdown-submenu dropdown-hover">
 												<a href="{% url 'category_photo' category.id %}" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ category.name | upper }} <span class="caret-2"><i ></i></span></a>
-
 												
 											</li>
 											{% endfor %}
@@ -176,11 +175,6 @@
 								-->
 								<li class="dropdown dropdown-hover">
 									<a href="{% url 'services' %}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Service<span class="caret-2"><i class=""></i></span></a>
-									
-								</li>
-
-								<li class="dropdown dropdown-hover">
-									<a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Blog<span class="caret-2"><i class=""></i></span></a>
 									
 								</li>
 								<!-- End dropdown -->
@@ -297,7 +291,6 @@
 
 
 
-        
 		<!-- ==============================
 		/////// Begin body content ///////
 		=============================== -->
@@ -323,11 +316,8 @@
 					<div class="row">
 						<div class="col-lg-12">
 
-							<h1 class="album-title">Blog</h1>
-							<ol class="breadcrumb">
-								<li><a href="index.html">Home</a></li>
-								<li class="active">Blog</li>
-							</ol>
+							<h1 class="album-title">Contact Us</h1>
+							
 
 						</div> <!-- /.col -->
 					</div> <!-- /.row -->
@@ -341,96 +331,107 @@
 			<!-- ================================
 			/////// Begin content section ///////
 			================================= -->
-			<section id="content-section" class="page">
+			<section id="content-section" class="page page-contact">
 
-				<div class="container max-width-1300">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+
+							<!-- Begin content wrap -->
+							<div class="content-wrap min-height-600">
+								<div class="row margin-bottom-40">
+									<div class="col-lg-4">
+
+										<address>
+											<i class="fas fa-home"></i> <strong>Rakib Hasan Photogrpher</strong><br>
+											Joydebpur, Gazipur, <br>
+											Postal code 1700, Dhaka <br>
+											<i class="fas fa-phone"></i> +8801680350313  <br>
+											<i class="fas fa-envelope">rakibhasan0527@gmail.com</i> <a href="mailto:#"></a>
+										</address>
+
+										
+
+									</div> <!-- /.col -->
+
+									<div class="col-md-8">
+
+										<h4></h4>
+										<p></p>
+
+									</div> <!-- /.col -->
+								</div> <!-- /.row -->
+
+								<div class="row">
+									<div class="col-md-12">
+
+									<!-- Begin new contact form -->
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Contact Us</h4>
+		<form id="new-contact-form" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="new_name">Name</label>
+                        <input type="text" id="new_name" name="new_name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="new_email">Email</label>
+                        <input type="email" id="new_email" name="new_email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="new_subject">Subject</label>
+                        <input type="text" id="new_subject" name="new_subject" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="new_message">Message</label>
+                        <textarea id="new_message" name="new_message" class="form-control" rows="6" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- End new contact form -->
+
+
+						</div> <!-- /.col -->
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+
+				<div class="container margin-top-40">
 					<div class="row">
 						<div class="col-md-12">
 
 							<!-- Begin content wrap -->
 							<div class="content-wrap">
-								
-								<!-- Begin blog list
-								===================== -->
-								<div class="blog-list">
-									<div class="row">
 
-										<!-- Left column -->
-										<div class="col-md-8 col-md-push-4">
-
-											<!-- Begin blog list items wrap 
-											================================= -->
-											<div class="blog-list-items-wrap">
-
-												{% for post in posts %}
-
-												<!-- Begin blog list item -->
-                                            <!-- Begin blog list item -->
-										<div class="blog-list-item">
-											<a href="{% url 'post_detail' post.id %}" class="bli-image bg-image" style="background-image: url({{ post.image.url }}); background-position: 50% 50%;">
-											</a>
-											<div class="bli-info">
-
-												
-  <!-- Your code to display individual posts goes here -->
-
-
-												<h2 class="bli-title"><a href="" title="{{ post.title }}">{{ post.title }}</a></h2>
-												<div class="bli-meta">
-													<a href="" class="article-time">Time {{ post.date_posted }} </a> 
-													<a href="" class="article-author">{{ post.author.username }}</a>  Category-
-													<a href="" class="article-category">{{ post.category.name }}</a>
-												</div>
-												<p class="bli-desc">
-													{{ post.content|safe }}
-												</p>
-
-												<div class="bli-button">
-													<a href="{% url 'post_detail' post.id %}" class="btn btn-dark btn-rounded-5x btn-sm">Read More</a>
-												</div>
-												{% endfor %}
-
-											</div>
-										</div> 
-										<!-- End blog list item -->
-
-
-
-
-												
-
-
-											</div> 
-											<!-- End blog list items wrap -->
-
-										</div> <!-- /.col (Left column) -->
-
-
-
-									</div> <!-- /.row -->
-								</div>
-								<!-- End blog-list -->
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29160.25116831161!2d90.400114118611!3d23.994668401156215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755dafdd8aa72a1%3A0xe3a23793cb030fdb!2sGazipur!5e0!3m2!1sen!2sbd!4v1672145395417!5m2!1sen!2sbd" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 							</div>
 							<!-- End content wrap -->
 
 						</div> <!-- /.col -->
 					</div> <!-- /.row -->
-
-
 				</div> <!-- /.container -->
 
 			</section>
 			<!-- End content section -->
-
-
-
-
-
-
-		
-
-			
 
 
 			<!-- Begin footer -->
@@ -441,11 +442,13 @@
 
 							<div class="col-sm-6">
 								<div class="copyright">
-									copyright	&copy; 2022-2023 Rakib Hasan Photography 
+								 copyright	&copy; 2022-2023 Rakib Hasan Photography 
 								</div>
 							</div> <!-- /.col -->
 
-							
+							<div class="col-sm-6">
+								
+							</div> <!-- /.col -->
 
 						</div> <!-- /.row -->
 					</div> <!-- /.container -->
@@ -475,7 +478,7 @@
 		<!-- Libs and Plugins JS -->
 		<script src="{% static 'assets/vendor/lightgallery/js/lightgallery-all.min.js' %}"></script> <!-- lightGallery JS (http://sachinchoolur.github.io/lightGallery) -->
 
-' %}		<script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support -->
+		<script src="{% static 'assets/vendor/jquery.mousewheel.min.js' %}"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support -->
 		<script src="{% static 'assets/vendor/jquery.easing.min.js' %}"></script> <!-- Easing JS (http://gsgd.co.uk/sandbox/jquery/easing/) -->
 		<script src="{% static 'assets/vendor/isotope.pkgd.min.js' %}"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
 		<script src="{% static 'assets/vendor/imagesloaded.pkgd.min.js' %}"></script> <!-- ImagesLoaded JS (https://github.com/desandro/imagesloaded) -->
@@ -483,8 +486,17 @@
 		<script src="{% static 'assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js' %}"></script> <!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
 		<script src="{% static 'assets/vendor/owl-carousel/js/owl.carousel.min.js' %}"></script> <!-- Owl Carousel JS (https://owlcarousel2.github.io/OwlCarousel2/) -->
 
+		<!-- Google maps JS (https://developers.google.com/maps/documentation/javascript/tutorial). Only for contact page!!! -->
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo5b533IB2iuDcTn2razvfjyc_rpZdiRw&callback=initMap"></script> 
+		<!-- Google maps JS (https://developers.google.com/maps/documentation/javascript/tutorial). Only for contact page!!! -->
+		<script src="{% static 'assets/vendor/map.js' %}"></script> 
+
 		<!-- Theme master JS -->
 		<script src="{% static 'assets/js/theme.js' %}"></script>
+
+
+
+		
 
 
 
@@ -504,4 +516,4 @@
 	</body>
 	<!-- End body -->
 
-</html>
+</html>{% static '

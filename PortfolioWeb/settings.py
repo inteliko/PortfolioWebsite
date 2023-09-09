@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'gallery',
     'blog',
     'ckeditor',
+    'contact',
 ]
 
 MIDDLEWARE = [

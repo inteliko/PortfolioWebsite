@@ -11,7 +11,6 @@ urlpatterns = [
 
 
 
-    path('contact/', views.contact_view, name='contact'),
     path('categories/<str:category_name>/', views.Catagories, name='categories'),  # Corrected view name
     path('categories/kids/', views.Kids, name='kids'),
     path('categories/couples/', views.Couples, name='couples'),

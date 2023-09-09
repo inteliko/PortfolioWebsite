@@ -1581,10 +1581,16 @@ section {
 	font-weight: 100;
 	line-height: 1.2;
 	letter-spacing: 6px;
-	background: linear-gradient(to right,#30CFD0,#c43ad6);
+	background: linear-gradient(to right, #30CFD0, #c43ad6);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	}
+	padding-top: 20px; /* Add the desired padding value here */
+	font-family: Arial Rounded MT Bold;
+
+}
+
+
+	
 @media (max-width: 768px) {
 	.alter-heading .album-title {
 		font-size: 28px;
@@ -1937,7 +1943,7 @@ section {
 	right: 10px;
 	top: -5px;
 	height: 5px;
-	background-color: #e3cb64;
+	background-color: rgba(227, 203, 100, 0);
 }
 
 
@@ -4132,8 +4138,6 @@ body.modal-open {
 }
 
 .blog-list-item .bli-desc {
-    margin: 0;
-    padding: 0;
 }
 
 .blog-list-item .bli-button {
@@ -5911,7 +5915,7 @@ label {
 	margin-top: 8px;
 	text-transform: uppercase;
 	font-size: 12px;
-	font-family: 'Lora', serif;
+	font-family: Arial Rounded MT Bold;
 	color: #fff;
 }
 
@@ -6187,7 +6191,8 @@ label {
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 	font-size: 30px;
-	font-family: 'Poppins', sans-serif;
+	font-family: Arial Rounded MT Bold;
+
 
   }
 

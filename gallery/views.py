@@ -14,6 +14,18 @@ from .forms import ContactForm
 def Base(request):
     categories = Category.objects.all()
     context = {'categories': categories}
+
+    categories = Category.objects.all()
+    photos_by_category = {}
+
+    for category in categories:
+        category_photos = Photo.objects.filter(category=category)
+        if category_photos.exists():
+            random_photo = random.choice(category_photos)
+            if random_photo.image:  # Check if the random_photo has an associated image
+                photos_by_category[category] = random_photo
+
+    context = {'photos_by_category': photos_by_category}
     return render(request, 'base.html', context)
 
 
@@ -36,6 +48,12 @@ def Portfolio(request):
 
     context = {'photos_by_category': photos_by_category}
     return render(request, 'portfolio.html', context)
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,10 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'most_recent_post': most_recent_post, 'posts': posts})
 
 
+
+
+
+
 from .models import Comment
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404, redirect
@@ -37,3 +41,7 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+
+
+

@@ -4110,7 +4110,7 @@ body.modal-open {
 	font-weight: 100;
 	line-height: 1.2;
 	letter-spacing: 6px;
-	background: linear-gradient(to right,#30CFD0,#c43ad6);
+	background-color: #fff;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }

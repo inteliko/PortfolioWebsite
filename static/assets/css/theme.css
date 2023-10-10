@@ -5319,8 +5319,8 @@ body.modal-open {
 	font-size: 12px;
 }
 .btn-group-sm > .btn, .btn-sm {
-	padding: 5px 20px;
-	font-size: 12px;
+	
+	background-color: blueviolet;
 }
 .btn-group-lg > .btn, .btn-lg {
 	padding: 15px 40px;

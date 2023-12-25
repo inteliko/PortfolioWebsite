@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'gallery',
     'blog',
     'contact',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -142,3 +143,7 @@ CKEDITOR_CONFIGS = {
         'height': 500,
     },
 }
+
+# settings.py
+
+CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'

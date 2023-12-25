@@ -1,6 +1,6 @@
+# models.py
 from django.db import models
 from ckeditor.fields import RichTextField
-
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    content = RichTextField()
+    content = RichTextField()  # Use RichTextField for CKEditor content
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='post_images/', null=True, blank=True)
@@ -19,8 +19,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
-from django.db import models
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

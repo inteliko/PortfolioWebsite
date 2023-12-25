@@ -1,6 +1,8 @@
 from django.core.mail import send_mail
 from .forms import ContactForm
 from django.shortcuts import render
+from .models import About
+
 
 
 def contact_view(request):
@@ -26,3 +28,8 @@ def contact_view(request):
         form = ContactForm()
 
     return render(request, 'contact/contact.html', {'form': form})
+
+
+def about(request):
+    about_info = About.objects.first()  # Assuming you only have one about section, adjust as needed
+    return render(request, 'about.html', {'about_info': about_info})

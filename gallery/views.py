@@ -11,21 +11,31 @@ from .forms import ContactForm
 
 
 
-def Base(request):
-    categories = Category.objects.all()
-    context = {'categories': categories}
+def get_random_photo_by_category(category):
+    category_photos = Photo.objects.filter(category=category)
+    if category_photos.exists():
+        random_photo = random.choice(category_photos)
+        if random_photo.image:
+            return random_photo
+    return None
 
+def common_photo_logic():
     categories = Category.objects.all()
     photos_by_category = {}
 
     for category in categories:
-        category_photos = Photo.objects.filter(category=category)
-        if category_photos.exists():
-            random_photo = random.choice(category_photos)
-            if random_photo.image:  # Check if the random_photo has an associated image
-                photos_by_category[category] = random_photo
+        random_photo = get_random_photo_by_category(category)
+        if random_photo:
+            photos_by_category[category] = random_photo
 
-    context = {'photos_by_category': photos_by_category}
+    return photos_by_category
+
+def Base(request):
+    categories = Category.objects.all()
+    photos_by_category = common_photo_logic()
+
+    context = {'categories': categories, 'photos_by_category': photos_by_category}
+
     return render(request, 'base.html', context)
 
 
@@ -57,7 +67,7 @@ def Portfolio(request):
 
 
 
-# views.py
+
 
 def CategoryPhotos(request, category_id):
     category = Category.objects.get(id=category_id)

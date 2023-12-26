@@ -138,7 +138,13 @@
 											<li><a href="{% url 'portfolio' %}">All</a></li>
 											{% for category in categories %}
 											<li class="dropdown dropdown-submenu dropdown-hover">
-												<a href="{% url 'category_photo' category.id %}" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ category.name | upper }} <span class="caret-2"><i ></i></span></a>
+												<a href="{% url 'category_photos' category.id %}" class="dropdown-toggle keep-inside-screen" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ category.name | upper }} <span class="caret-2"><i></i></span></a>
+												<ul class="dropdown-menu">
+													<!-- Additional submenu items can be added here -->
+													<!-- For example: -->
+													<li><a href="#">Subcategory 1</a></li>
+													<li><a href="#">Subcategory 2</a></li>
+												</ul>
 											</li>
 											{% endfor %}
 											<!-- Additional menu items can be added here -->
@@ -298,251 +304,42 @@
 
 
 
+		<div class="container">
+			<div class="page-header">
+				<h1>Your Blog Title</h1>
+			</div>
 		
-
-							
-										<!-- ===============================================
-										///// Begin section (nav-tabs + nav-justified) /////
-										================================================ -->
-										<section>
-											<div class="section-inner">
-												<div class="row">
-													<div class="col-md-12">
-
-
-														<!-- Begin tabs -->
-														<div class="tabs-wrap margin-top-50">
-
-															<!-- Nav tabs 
-															==============
-															* Use class "nav-pills" or "nav-tabs" to style tabs.
-															* Use class "text-center" or "text-right" to aling tabs.
-															* Use class "nav-justified" to enable equal widths tabs.
-															-->
-															<ul  class="nav nav-tabs nav-justified" role="tablist">
-																<li role="presentation" class="active"><a href="#home-32847624" aria-controls="home-32847624" role="tab" data-toggle="tab"> Single</a></li>
-																<li role="presentation"><a href="#profile-32847624" aria-controls="profile-32847624" role="tab" data-toggle="tab">Couple</a></li>
-																<li role="presentation"><a href="#profile-32847625" aria-controls="profile-32847624" role="tab" data-toggle="tab">Corporate</a></li>
-																<li role="presentation"><a href="#profile-32847626" aria-controls="profile-32847624" role="tab" data-toggle="tab">Ecommerce</a></li>
-
-
-																
-
-
-																<!-- Begin dropdown
-																====================
-																* Use class "dropdown-hover" to make navigation toggle on desktop hover.
-																* Use class "dropdown-menu-dark" to enable dark dropdown menu.
-																-->
-																
-
-															</ul> <!-- /.nav-tabs -->
-
-															<!-- Tabs content -->
-															<div class="tab-content">
-																<div role="tabpanel" class="fade tab-pane in active" id="home-32847624">
-
-																	<div class="spacing" >
-
-																		<div class="service-left">
-
-																		<img class="service-img" src="{% static 'assets/img/gallery/FEMALE/G.jpg' %}" alt="" srcset="">
-																	
-																		</div>
-
-																		<div class="service-right">
-
-
-																			<div class="columns">
-																				<ul class="price">
-																				  <li class="header">Single</li>
-																				  <li class="grey"> 2 Hours Photoshoot / 12000 Taka</li>
-																				  <li class="grey"> 3 Hours Photoshoot / 15000 Taka</li>
-																				  
-																				  
-																				  <li class="grey"><a href="{% url 'contact' %}" class="button">Contact</a></li>
-																				</ul>
-																			</div>
-
-
-																	
-																			
-
-
-																		</div>
-																		
-
-																	</div>
-																	
-																</div>
-
-
-
-
-																<div role="tabpanel" class="fade tab-pane" id="profile-32847624">
-
-																	<div class="spacing" >
-
-																		<div class="service-left">
-
-																		<img class="service-img" src="{% static 'assets/img/gallery/COUPLE /10.jpg' %}" alt="" srcset="">
-																	
-																		</div>
-
-																		<div class="service-right">
-
-
-																			<div class="columns">
-																				<ul class="price">
-																				  <li class="header">Couple</li>
-																				  <li class="grey"> 3 Hours Photoshoot / 15000Taka</li>
-																				  
-																				  
-																				  <li class="grey"><a href="{% url 'contact' %}" class="button">Contact</a></li>
-																				</ul>
-																			</div>
-
-
-																	
-																			
-
-
-																		</div>
-																		
-
-																	</div>
-
-																	
-
-												
-																	
-														
-																</div>
-																
-																
-
-																<div role="tabpanel" class="fade tab-pane" id="profile-32847625">
-
-																	<div class="spacing" >
-
-																		<div class="service-left">
-
-																		<img class="service-img" src="{% static 'assets/img/gallery/ECOMMERCE/Z6R_3227-copy_SET.jpg' %}" alt="" srcset="">
-																	
-																		</div>
-
-																		<div class="service-right">
-
-
-																			<div class="columns">
-																				<ul class="price">
-																				  <li class="header">Corporate</li>
-																				  <li class="grey"> 15000Taka</li>
-																				  
-																				  
-																				  <li class="grey"><a href="{% url 'contact' %}" class="button">Contact</a></li>
-																				</ul>
-																			</div>
-
-
-																	
-																			
-
-
-																		</div>
-																		
-
-																	</div>
-																	
-
-												
-																	
-														
-																</div>
-
-																<div role="tabpanel" class="fade tab-pane" id="profile-32847626">
-
-																	<div class="spacing" >
-
-																		<div class="service-left">
-
-																		<img class="service-img" src="{% static 'assets/img/gallery/ECOMMERCE/Z6R_3227-copy_SET.jpg' %}" alt="" srcset="">
-																	
-																		</div>
-
-																		<div class="service-right">
-
-
-																			<div class="columns">
-																				<ul class="price">
-																				  <li class="header">Ecommerce</li>
-																				  <li class="grey">15000Taka</li>
-																				  
-																				  
-																				  <li class="grey"><a href="{% url 'contact' %}" class="button">Contact</a></li>
-																				</ul>
-																			</div>
-
-
-																	
-																			
-
-
-																		</div>
-																		
-
-																	</div>
-
-																	
-
-												
-																	
-														
-																</div>
-															</div> <!-- /.tab-content -->
-
-														</div>
-														<!-- End tabs -->
-
-													</div> <!-- /.col -->
-												</div> <!-- /.row -->
-											</div> <!-- /.section-inner -->
-										</section>
-										<!-- End section -->
-
-
-
-
-
-									</div> <!-- /.col -->{% static '
-								</div> <!-- /.row -->
+			<!-- Categories Section -->
+			<div class="row">
+				<div class="col-md-4">
+					<h2>Categories</h2>
+					<ul class="list-group">
+						{% for category in categories %}
+							<li class="list-group-item"><a href="{% url 'category_detail' category.id %}">{{ category.name }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+		
+				<!-- Posts Section -->
+				<div class="col-md-8">
+					<h2>Recent Posts</h2>
+					{% for post in posts %}
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">{{ post.title }}</h3>
 							</div>
-							<!-- End content wrap -->
-
-						</div> <!-- /.col -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-
-
-				
-
-			</section>
-			<!-- End content section -->
-
-
-			
-
-
-			
-			
-
-
-
-
-
-
-
-       
+							<div class="panel-body">
+								{% if post.image %}
+									<img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-responsive">
+								{% endif %}
+								<p>{{ post.content | safe }}</p>
+								<a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read more</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 
 
 

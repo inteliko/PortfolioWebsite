@@ -170,10 +170,7 @@
 								* Use class "dropdown-menu-right" to right align the dropdown menu.
 								* Use class "dropdown-menu-dark" to enable dark dropdown menu.
 								-->
-								<li class="dropdown dropdown-hover">
-									<a href="{% url 'services' %}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Service<span class="caret-2"><i class=""></i></span></a>
-									
-								</li>
+								
 
 								<li class="dropdown dropdown-hover">
 									<a href="{% url 'post_list' %}" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Blog<span class="caret-2"><i class=""></i></span></a>
@@ -526,148 +523,13 @@
 			</section>
 			<!-- End content section -->
 
+			
 
 
-
-
+			
 
         
-		<!-- ==============================
-		/////// Begin testomonials content ///////
-		=============================== -->
-		<div id="body-content">
-
-
-			<!-- ================================
-			///// Begin page header section /////
-			================================= -->
-			<section id="page-header-secion" class="alter-heading">
-
-				<!-- Begin page header image 
-				===============================
-				* Use class "parallax" to enable parallax effect.
-				-->
-				<div class="page-header-image parallax bg-image" style="background-image: url(assets/img/gallery/COUPLE\ /); background-position: 50% 50%;"></div>
-				<!-- End page header image -->
-
-				<!-- Element cover -->
-				<div class="cover page-header-cover"></div>
-
-				<!-- Begin page header info -->
-				<div class="container page-header-content no-padding max-width-800 text-center">
-					<div class="row">
-						<div class="col-lg-12">
-
-							<h1 class="album-title">testimonials</h1>
-							<ol class="breadcrumb">
-								
-							</ol>
-
-						</div> <!-- /.col -->
-					</div> <!-- /.row -->
-				</div> 
-				<!-- End page header info -->
-
-			</section>
-			<!-- End page header section -->
-
-
-			<!-- ================================
-			/////// Begin content section ///////
-			================================= -->
-			<section id="content-section" class="page">
-
-				<!-- dummy heading (hidden) -->
-				<h3 class="hide">d-h</h3>
-
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-
-							<!-- Begin content wrap -->
-							<div class="content-wrap">
-								<div class="row">
-									<div class="col-md-12">
-
-											<div class="wrapper">
-												<div class="box">
-													<i class="fas fa-quote-left quote"></i>
-													<p> I have worked with Mr. Rakib for a long time. Whenever I need personal photo shoots for my family or myself, I always rely on him. 
-	  
-													  He is also the official photographer of my brand Lil Star and I am extremely satisfied with his work for my brand. He is a versatile photographer, as he is familiar with various types of photo shoots. He can execute business shoots, fashion shoots, product shoots, etc. 
-													  
-													  I am happy to know him and work with him. Most importantly, he is a good human and a pleasure to work with.</p>
-													<div class="content">
-													  <div class="info">
-														<div class="name">Lubana Ahmed</div>
-														<div class="job"> Director - NZ Group</div>
-														<div class="stars">
-														  <i class="fas fa-star"></i>
-														  <i class="fas fa-star"></i>
-														  <i class="fas fa-star"></i>
-														  <i class="far fa-star"></i>
-														  <i class="far fa-star"></i>
-														</div>
-													  </div>
-													  <div class="image">
-														<img src="assets/img/DSC_3015.jpg" alt="">
-													  </div>
-													</div>
-												  </div>
-											 
-
-											<div class="box">
-											  <i class="fas fa-quote-left quote"></i>
-											  <p> Mr. Rakib Hasan has been the official photographer of Lil Star since 2020, and I must say he is a talented photographer. He is passionate, which is evident in his work. He is professional and dedicated to his work. He can give a full photography solution to any brand, as he is able to execute photo shoots, and also do fantastic editing to achieve the best photos. He has elevated Lil Star as a brand with his photography skills.</p>
-											  <div class="content">
-												<div class="info">
-												  <div class="name"></div>
-												  <div class="job">Lil Star</div>
-												  <div class="stars">
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="far fa-star"></i>
-													<i class="far fa-star"></i>
-													<i class="far fa-star"></i>
-												  </div>
-												</div>
-												<div class="image">
-												  <img src="assets/img/lil-star.png" alt="">
-												</div>
-											  </div>
-											</div>
-
-
-									
-
-
-											
-											
-										
-												
-
-									</div> <!-- /.col -->
-								</div> <!-- /.row -->
-							</div>
-							<!-- End content wrap -->
-
-						</div> <!-- /.col -->
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-
-
-				
-
-
-
-
-
-
-
-
-			</section>
-			<!-- End content section -->
-
+	
 
 
 
@@ -748,45 +610,45 @@
 									<div class="col-md-12">
 
 										    <!-- Begin contact form -->
-    <form id="contact-form" method="post">
-        {% csrf_token %}
-        <!-- Begin hidden required fields -->
-        <input type="hidden" name="project_name" value="yourwebsiteaddress.com">
-        <input type="hidden" name="admin_email" value="your@email.com">
-        <input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com">
-        <!-- End Hidden Required Fields -->
+					<form id="contact-form" method="post">
+						{% csrf_token %}
+						<!-- Begin hidden required fields -->
+						<input type="hidden" name="project_name" value="yourwebsiteaddress.com">
+						<input type="hidden" name="admin_email" value="your@email.com">
+						<input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com">
+						<!-- End Hidden Required Fields -->
 
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="Name:" placeholder="Your Name" required="">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="form-group">
-                    <input type="email" class="form-control" name="Email:" placeholder="Your Email" required="">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="Subject:" placeholder="Subject" required="">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="form-group">
-                    <textarea class="form-control" name="Message:" rows="8" placeholder="Message" required=""></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <button type="submit" class="btn btn-primary btn-rounded-5x btn-block">Send Message</button>
-            </div>
-        </div>
-    </form>
-    <!-- End contact form -->
+						<div class="row">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<input type="text" class="form-control" name="Name:" placeholder="Your Name" required="">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<input type="email" class="form-control" name="Email:" placeholder="Your Email" required="">
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<input type="text" class="form-control" name="Subject:" placeholder="Subject" required="">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="form-group">
+									<textarea class="form-control" name="Message:" rows="8" placeholder="Message" required=""></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12">
+								<button type="submit" class="btn btn-primary btn-rounded-5x btn-block">Send Message</button>
+							</div>
+						</div>
+					</form>
+					<!-- End contact form -->
 
 
 									</div> <!-- /.col-->
@@ -821,7 +683,7 @@
 
 
 			
-
+			
 
 
 

@@ -11,7 +11,10 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'date_posted', 'display_image')
 
     def display_image(self, obj):
-        return format_html('<img src="{}" style="max-height: 100px; max-width: 100px;"/>'.format(obj.image.url))
+        if obj.image:
+            return format_html('<img src="{}" style="max-height: 100px; max-width: 100px;"/>'.format(obj.image.url))
+        else:
+            return "No image"
 
     display_image.allow_tags = True
     display_image.short_description = 'Image Preview'

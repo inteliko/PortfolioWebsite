@@ -512,40 +512,47 @@
 												</ul>
 												<!-- End media list -->
 
+													<!-- Begin post comment form -->
+<form id="post-comment-form" method="post">
+    {% csrf_token %}
+    <h4>Leave a Comment:</h4>
 
-												<!-- Begin post comment form -->
-												<form id="post-comment-form" method="post">
-													{% csrf_token %}
-													<h4>Leave a Comment:</h4>
-													<div class="row">
-														<div class="col-lg-6">
-															<div class="form-group">
-																{{ form.name }}
-															</div>
-														</div>
-														<div class="col-lg-6">
-															<div class="form-group">
-																{{ form.email }}
-															</div>
-														</div>
-													</div>
-													<div class="row">
-														<div class="col-lg-12">
-															<div class="form-group">
-																{{ form.content }}
-															</div>
-														</div>
-													</div>
-													<div class="row">
-														<div class="col-lg-12">
-															<button type="submit" class="btn btn-primary btn-rounded-5x">submit comment</button>
-															<label class="checkbox reminder margin-top-20 margin-left-20">
-																<input checked="checked" type="checkbox">Email me when this comment receives a reply
-															</label>
-														</div>
-													</div>
-												</form>
-												<!-- End post comment form -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">Your Name:</label>
+                {{ form.name }}
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Your Email:</label>
+                {{ form.email }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label for="{{ form.content.id_for_label }}">Your Comment:</label>
+                {{ form.content }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <button type="submit" class="btn btn-primary btn-rounded-5x">Submit Comment</button>
+            <label class="checkbox reminder margin-top-20 margin-left-20">
+                <input checked="checked" type="checkbox">Email me when this comment receives a reply
+            </label>
+        </div>
+    </div>
+</form>
+<!-- End post comment form -->
+
 
 
 												<script>

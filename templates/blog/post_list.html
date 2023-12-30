@@ -353,44 +353,35 @@
 								<div class="blog-list">
 									<div class="row">
 
-										<!-- Left column -->
-										<div >
-
-											<!-- Begin blog list items wrap 
-											================================= -->
+										<div>
+											<!-- Begin blog list items wrap ================================= -->
 											<div class="blog-list-items-wrap">
-
 												{% for post in posts %}
-
 												<!-- Begin blog list item -->
-                                            <!-- Begin blog list item -->
-										<div class="blog-list-item">
-											<a href="{% url 'post_detail' post.id %}" class="bli-image bg-image" style="background-image: url({{ post.image.url }}); background-position: 50% 50%;">
-											</a>
-											<div class="bli-info">
-
-												
-  <!-- Your code to display individual posts goes here -->
-
-
-												<h2 class="bli-title"><a href="" title="{{ post.title }}">{{ post.title }}</a></h2>
-												<div class="bli-meta">
-													<a href="" class="article-time">Time {{ post.date_posted }} </a> 
-													<a href="" class="article-author">{{ post.author.username }}</a>  Category-
-													<a href="" class="article-category">{{ post.category.name }}</a>
+												<div class="blog-list-item">
+													<a href="{% url 'post_detail' post.id %}" class="bli-image bg-image" style="background-image: url({{ post.image.url }}); background-position: 50% 50%;">
+													</a>
+													<div class="bli-info">
+														<h2 class="bli-title"><a href="" title="{{ post.title }}">{{ post.title }}</a></h2>
+														<div class="bli-meta">
+															<a href="" class="article-time">Time {{ post.date_posted }} </a>
+															<a href="" class="article-author">{{ post.author.username }}</a> Category-
+															<a href="" class="article-category">{{ post.category.name }}</a>
+														</div>
+														<p class="bli-desc">
+															{{ post.content|safe|truncatewords:50 }}
+														</p>
+														<div class="">
+															<a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
+														</div>
+													</div>
 												</div>
-												<p class="bli-desc">
-													{{ post.content|safe }}
-												</p>
-
-												<div class="">
-													<a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
-												</div>
+												<!-- End blog list item -->
 												{% endfor %}
-
 											</div>
-										</div> 
-										<!-- End blog list item -->
+										</div>
+										
+										
 
 
 
